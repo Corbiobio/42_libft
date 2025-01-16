@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edarnand <edarnand@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/13 11:09:15 by edarnand          #+#    #+#             */
-/*   Updated: 2024/11/14 15:05:28 by edarnand         ###   ########.fr       */
+/*   Created: 2024/11/07 16:53:39 by edarnand          #+#    #+#             */
+/*   Updated: 2025/01/01 16:23:26 by edarnand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+int	ft_abs(int n)
 {
-	new->next = *lst;
-	*lst = new;
+	if (n < 0)
+		n *= -1;
+	return (n);
 }

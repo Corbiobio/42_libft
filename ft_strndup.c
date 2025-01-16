@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edarnand <edarnand@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/13 11:11:19 by edarnand          #+#    #+#             */
-/*   Updated: 2024/11/14 15:05:29 by edarnand         ###   ########.fr       */
+/*   Created: 2025/01/08 11:18:56 by edarnand          #+#    #+#             */
+/*   Updated: 2025/01/08 11:19:31 by edarnand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+char	*ft_strndup(char *s, int n)
 {
-	t_list	*curr;
+	int		i;
+	char	*new;
 
-	if (lst == NULL || new == NULL)
-		return ;
-	if (*lst == NULL)
+	if (s == NULL)
+		return (NULL);
+	i = 0;
+	new = malloc(sizeof(char) * (n + 1));
+	if (new == NULL)
+		return (NULL);
+	while (i < n)
 	{
-		*lst = new;
-		return ;
+		new[i] = s[i];
+		i++;
 	}
-	else
-	{
-		curr = ft_lstlast(*lst);
-		curr->next = new;
-	}
+	new[i] = '\0';
+	return (new);
 }
